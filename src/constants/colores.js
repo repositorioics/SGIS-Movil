@@ -10,6 +10,7 @@ export const COLORES = {
     gray50:'#848482',
     degradadoInicio: '#7871F8',
     degradadoFin: '#817af5',
+    background: '#F6F7FB',
     
     // Colores adicionales
     exito: '#4CAF50',

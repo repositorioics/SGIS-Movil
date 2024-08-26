@@ -1,7 +1,7 @@
 // containers/RecuperarContrasenaContainer.js
 import React, { useState, useEffect } from 'react';
-import PantallaRecuperarContrasena from '../../screens/autenticacion/PantallaRecuperarContrasena';
-import { useFetch } from '../../hooks/useFetch';
+import PantallaRecuperarContrasena from '@screens/autenticacion/PantallaRecuperarContrasena';
+import { useFetch } from '@hooks/useFetch';
 import { useTranslation } from 'react-i18next';
 
 export default function RecuperarContrasenaContainer({ navigation }) {

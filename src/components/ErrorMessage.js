@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
-import { useTheme } from '../context/ThemeContext';
-import { TIPOGRAFIAS } from '../constants/tipografias';
+import { useTheme } from '@context/ThemeContext';
+import { TIPOGRAFIAS } from '@constants/tipografias';
 
 const ErrorMessage = ({ error }) => {
   const { theme } = useTheme();

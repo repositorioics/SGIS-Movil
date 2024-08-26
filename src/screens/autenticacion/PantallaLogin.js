@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, Alert } from 'react-native';
-import EntradaTexto from '../../components/EntradaTexto';
-import Boton from '../../components/Boton';
-import Cargando from '../../components/Cargando';
-import ImagenPantalla from '../../components/ImagenPantalla';
-import { estilosGlobales } from '../../styles/estilosGlobales';
-import { validarCamposVacios } from '../../utils/validaciones';
-import { useTheme } from '../../context/ThemeContext';
-import loginImage from '../../../assets/images/iniciosesion.png';
+import EntradaTexto from '@components/EntradaTexto';
+import Boton from '@components/Boton';
+import Cargando from '@components/Cargando';
+import ImagenPantalla from '@components/ImagenPantalla';
+import { estilosGlobales } from '@styles/estilosGlobales';
+import { validarCamposVacios } from '@utils/validaciones';
+import { useTheme } from '@context/ThemeContext';
+import loginImage from '@assets/images/iniciosesion.png';
 import { useTranslation } from 'react-i18next';
 
 export default function PantallaLogin({
@@ -27,7 +27,7 @@ export default function PantallaLogin({
 
     const validarInputs = () => {
         if (!validarCamposVacios(nombreUsuario, contrasena)) {
-            setError(t('fill_all_fields'));
+            setError(t('llenar_todos_los_campos'));
             return false;
         }
         setError('');
@@ -38,7 +38,7 @@ export default function PantallaLogin({
         if (validarInputs()) {
             handleLogin();
         } else {
-            Alert.alert(t('error'), t('fill_all_fields'));
+            Alert.alert(t('error'), t('llenar_todos_los_campos'));
         }
     };
 
@@ -48,15 +48,15 @@ export default function PantallaLogin({
                 source={loginImage} 
                 style={{ width: 300, height: 300, marginBottom: 5 }}
             />
-            <Text style={estilos.descripcion}>{t('login_description')}</Text>
+            <Text style={estilos.descripcion}>{t('descripcion_iniciar_sesion')}</Text>
             <EntradaTexto
-                placeholder={t('username')}
+                placeholder={t('nombre_usuario')}
                 value={nombreUsuario}
                 onChangeText={setNombreUsuario}
                 estilo={{ marginBottom: 15 }}
             />
             <EntradaTexto
-                placeholder={t('password')}
+                placeholder={t('contrasena')}
                 secureTextEntry
                 value={contrasena}
                 onChangeText={setContrasena}
@@ -66,10 +66,9 @@ export default function PantallaLogin({
                 style={[estilos.link, { color: theme.colors.primary, textAlign: 'right', marginBottom: 20 }]}
                 onPress={() => navigation.navigate('RecuperarContrasena')}
             >
-                {t('forgot_password')}?
+                {t('olvidaste_contrasena')}?
             </Text>
-            {/* {error ? <Text style={estilos.errorText}>{error}</Text> : null} */}
-            <Boton titulo={t('login')} onPress={onLoginPress} />
+            <Boton titulo={t('iniciar_sesion')} onPress={onLoginPress} />
             <Cargando visible={cargando} />
         </View>
     );

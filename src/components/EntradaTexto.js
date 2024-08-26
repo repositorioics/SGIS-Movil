@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, StyleSheet, Text, View } from 'react-native';
-import { useTheme } from '../context/ThemeContext';
-import { TIPOGRAFIAS } from '../constants/tipografias';
+import { useTheme } from '@context/ThemeContext';
+import { TIPOGRAFIAS } from '@constants/tipografias';
 
 export default function EntradaTexto({
     placeholder,

@@ -1,9 +1,9 @@
 // containers/NuevaContrasenaContainer.js
 import React, { useState, useEffect } from 'react';
-import PantallaNuevaContrasena from '../../screens/autenticacion/PantallaNuevaContrasena';
-import { useFetch } from '../../hooks/useFetch';
+import PantallaNuevaContrasena from '@screens/autenticacion/PantallaNuevaContrasena';
+import { useFetch } from '@hooks/useFetch';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '@hooks/useAuth';
 
 export default function NuevaContrasenaContainer({ navigation }) {
   const { t } = useTranslation();

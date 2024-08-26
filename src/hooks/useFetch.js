@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from './useAuth';
+import { useAuth } from '@hooks/useAuth';
 
 export const useFetch = (url, options = {}) => {
   const { token, refreshTokenFunction } = useAuth();
@@ -34,7 +34,7 @@ export const useFetch = (url, options = {}) => {
         }
 
         if (!response.ok) {
-          throw new Error('Error en la solicitud: ' + response.statusText);
+          throw new Error(`Error en la solicitud: ${response.statusText}`);
         }
 
         const data = await response.json();

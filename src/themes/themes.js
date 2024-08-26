@@ -1,8 +1,10 @@
-import { COLORES } from '../constants/colores';
+import { COLORES } from '@constants/colores';
 
 export const lightTheme = {
   colors: {
     primary: COLORES.primario50,
+    primary1: COLORES.primario100,
+    primary2: COLORES.primario200,
     secondary: COLORES.secundario100,
     background: COLORES.neutro50,
     text: COLORES.oscuro400,
@@ -16,12 +18,15 @@ export const lightTheme = {
     buttonSecondary: COLORES.secundario100,
     buttonDisabled: COLORES.disabled,
     error: COLORES.error,
+    background50: COLORES.background
   },
 };
 
 export const darkTheme = {
   colors: {
     primary: COLORES.primario50,
+    primary100: COLORES.primario100,
+    primary200: COLORES.primario200,
     secondary: COLORES.secundario100,
     background: COLORES.oscuro400,
     text: COLORES.neutro50,

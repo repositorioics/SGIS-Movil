@@ -1,7 +1,7 @@
 // containers/OTPContainer.js
 import React, { useState, useEffect } from 'react';
-import PantallaOTP from '../../screens/autenticacion/PantallaOTP';
-import { useFetch } from '../../hooks/useFetch';
+import PantallaOTP from '@screens/autenticacion/PantallaOTP';
+import { useFetch } from '@hooks/useFetch';
 import { useTranslation } from 'react-i18next';
 
 export default function OTPContainer({ navigation }) {

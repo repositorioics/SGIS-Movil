@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Alert } from 'react-native';
-import EntradaTexto from '../../components/EntradaTexto';
-import Boton from '../../components/Boton';
-import Cargando from '../../components/Cargando';
-import ImagenPantalla from '../../components/ImagenPantalla';
-import { estilosGlobales } from '../../styles/estilosGlobales';
-import { validarContrasena, validarContrasenasIguales, validarCamposVacios } from '../../utils/validaciones';
-import newPasswordImage from '../../../assets/images/nuevacontra.png';
+import EntradaTexto from '@components/EntradaTexto';
+import Boton from '@components/Boton';
+import Cargando from '@components/Cargando';
+import ImagenPantalla from '@components/ImagenPantalla';
+import { estilosGlobales } from '@styles/estilosGlobales';
+import { validarContrasena, validarContrasenasIguales, validarCamposVacios } from '@utils/validaciones';
+import newPasswordImage from '@assets/images/nuevacontra.png';
 import { useTranslation } from 'react-i18next';
 
 export default function PantallaNuevaContrasena({
@@ -23,15 +23,15 @@ export default function PantallaNuevaContrasena({
 
     const validarInputs = () => {
         if (!validarCamposVacios(nuevaContrasena, confirmarContrasena)) {
-            setError(t('fill_all_fields'));
+            setError(t('llenar_todos_los_campos'));
             return false;
         }
         if (!validarContrasena(nuevaContrasena)) {
-            setError(t('password_min_length'));
+            setError(t('contrasena_minima'));
             return false;
         }
         if (!validarContrasenasIguales(nuevaContrasena, confirmarContrasena)) {
-            setError(t('passwords_do_not_match'));
+            setError(t('contrasenas_no_coinciden'));
             return false;
         }
         setError('');
@@ -52,23 +52,22 @@ export default function PantallaNuevaContrasena({
                 source={newPasswordImage} 
                 style={{ width: 300, height: 300, marginBottom: 30 }}
             />
-            <Text style={estilos.descripcion}>{t('reset_password_description')}</Text>
+            <Text style={estilos.descripcion}>{t('descripcion_restablecer_contrasena')}</Text>
             <EntradaTexto
-                placeholder={t('new_password')}
+                placeholder={t('nueva_contrasena')}
                 secureTextEntry
                 value={nuevaContrasena}
                 onChangeText={setNuevaContrasena}
                 estilo={{ marginBottom: 15 }}
             />
             <EntradaTexto
-                placeholder={t('confirm_password')}
+                placeholder={t('confirmar_contrasena')}
                 secureTextEntry
                 value={confirmarContrasena}
                 onChangeText={setConfirmarContrasena}
                 estilo={{ marginBottom: 20 }}
             />
-            {/* {error ? <Text style={estilos.errorText}>{error}</Text> : null} */}
-            <Boton titulo={t('submit')} onPress={onResetPress} />
+            <Boton titulo={t('enviar')} onPress={onResetPress} />
             <Cargando visible={false} />
         </View>
     );

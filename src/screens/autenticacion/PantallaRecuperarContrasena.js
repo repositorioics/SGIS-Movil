@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Alert } from 'react-native';
-import EntradaTexto from '../../components/EntradaTexto';
-import Boton from '../../components/Boton';
-import Cargando from '../../components/Cargando';
-import ImagenPantalla from '../../components/ImagenPantalla';
-import { estilosGlobales } from '../../styles/estilosGlobales';
-import { validarEmail, validarCamposVacios } from '../../utils/validaciones';
-import resetPasswordImage from '../../../assets/images/recuperarcontra.png';
+import EntradaTexto from '@components/EntradaTexto';
+import Boton from '@components/Boton';
+import Cargando from '@components/Cargando';
+import ImagenPantalla from '@components/ImagenPantalla';
+import { estilosGlobales } from '@styles/estilosGlobales';
+import { validarEmail, validarCamposVacios } from '@utils/validaciones';
+import resetPasswordImage from '@assets/images/recuperarcontra.png';
 import { useTranslation } from 'react-i18next';
 
 export default function PantallaRecuperarContrasena({
@@ -21,11 +21,11 @@ export default function PantallaRecuperarContrasena({
 
     const validarInputs = () => {
         if (!validarCamposVacios(email)) {
-            setError(t('fill_all_fields'));
+            setError(t('llenar_todos_los_campos'));
             return false;
         }
         if (!validarEmail(email)) {
-            setError(t('invalid_email'));
+            setError(t('correo_invalido'));
             return false;
         }
         setError('');
@@ -36,7 +36,7 @@ export default function PantallaRecuperarContrasena({
         if (validarInputs()) {
             handleRecuperar();
         } else {
-            Alert.alert(t('error'), error)
+            Alert.alert(t('error'), error);
         }
     };
 
@@ -46,15 +46,15 @@ export default function PantallaRecuperarContrasena({
                 source={resetPasswordImage} 
                 style={{ width: 300, height: 300, marginBottom: 30 }}
             />
-            <Text style={estilos.descripcion}>{t('recover_password_description')}</Text>
+            <Text style={estilos.descripcion}>{t('descripcion_recuperar_contrasena')}</Text>
             <EntradaTexto
-                placeholder={t('email')}
+                placeholder={t('correo_invalido')}  // Corrected the placeholder to be aligned with the context
                 value={email}
                 onChangeText={setEmail}
                 estilo={{ marginBottom: 20 }}
             />
             {/* {error ? <Text style={estilos.errorText}>{error}</Text> : null} */}
-            <Boton titulo={t('submit')} onPress={onRecuperarPress} />
+            <Boton titulo={t('enviar')} onPress={onRecuperarPress} />
             <Cargando visible={false} />
         </View>
     );

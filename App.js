@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View } from 'react-native';
 import useFonts from './src/hooks/useFonts';
@@ -10,8 +11,7 @@ export default function App() {
   const fontsLoaded = useFonts();
 
   if (!fontsLoaded) {
-    // Puedes usar un color predeterminado para la pantalla de carga
-    const defaultColor = '#7871F8'; // un color de tu elección
+    const defaultColor = '#7871F8';
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Cargando visible={true} color={defaultColor} />
@@ -27,7 +27,7 @@ export default function App() {
 }
 
 const MainApp = () => {
-  const { theme } = useTheme(); // Ahora puedes usar useTheme aquí
+  const { theme } = useTheme();
 
   return (
     <AppNavegacion />

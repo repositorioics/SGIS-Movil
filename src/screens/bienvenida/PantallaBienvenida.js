@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import ImagenPantalla from '../../components/ImagenPantalla';
-import Boton from '../../components/Boton';
-import { estilosGlobales } from '../../styles/estilosGlobales';
-import welcomeImage from '../../../assets/images/bienvenido.png';
+import ImagenPantalla from '@components/ImagenPantalla';
+import Boton from '@components/Boton';
+import { estilosGlobales } from '@styles/estilosGlobales';
+import welcomeImage from '@assets/images/bienvenido.png';
 import { useTranslation } from 'react-i18next';
 
 export default function PantallaBienvenida({ navigation }) {
@@ -16,8 +16,9 @@ export default function PantallaBienvenida({ navigation }) {
                 source={welcomeImage} 
                 style={{ width: 300, height: 300, marginBottom: 30 }}
             />
-            <Text style={[estilos.descripcion, { marginBottom: 40 }]}>{t('optimize_inventory')}</Text>
-            <Boton titulo={t('get_started')} onPress={() => navigation.navigate('Login')} />
+            <Text style={[estilos.titulo, { marginBottom: 40 }]}>{t('bienvenido')}</Text>
+            <Text style={[estilos.descripcion, { marginBottom: 40 }]}>{t('optimiza_inventario')}</Text>
+            <Boton titulo={t('comenzar')} onPress={() => navigation.navigate('IniciarSesion')} />
         </View>
     );
 }

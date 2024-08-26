@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PantallaLogin from '../../screens/autenticacion/PantallaLogin';
-import { useFetch } from '../../hooks/useFetch';
-import { useAuth } from '../../hooks/useAuth';
+import PantallaLogin from '@screens/autenticacion/PantallaLogin';
+import { useFetch } from '@hooks/useFetch';
+import { useAuth } from '@hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 
 export default function LoginContainer({ navigation }) {
