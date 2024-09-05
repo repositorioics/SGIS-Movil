@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 // Importación de los Containers y Screens
 import LoginContainer from '@containers/autenticacion/LoginContainer';
+import PantallaInternacionalizacion from '@screens/bienvenida/PantallaInternacionalizacion';
 import NuevaContrasenaContainer from '@containers/autenticacion/NuevaContrasenaContainer';
 import OTPContainer from '@containers/autenticacion/OTPContainer';
 import RecuperarContrasenaContainer from '@containers/autenticacion/RecuperarContrasenaContainer';
@@ -58,7 +59,7 @@ function HomeTabs() {
                 tabBarStyle: {
                     backgroundColor: '#ffffff',
                     paddingHorizontal: 10,
-                    paddingBottom: 20,
+                    paddingBottom: 10,
                     height: 80,
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
@@ -79,34 +80,39 @@ export default function AppNavegacion() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="inicio">
+            <Stack.Navigator initialRouteName="Bienvenida">
                 <Stack.Screen
                     name="Bienvenida"
                     component={PantallaBienvenida}
                     options={{ headerShown: false }}
                 />
+                 <Stack.Screen
+                    name="Internacionalizacion"
+                    component={PantallaInternacionalizacion}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen
                     name="IniciarSesion"
                     component={LoginContainer}
-                    options={{ title: t('iniciar_sesion') }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="NuevaContrasena"
                     component={NuevaContrasenaContainer}
-                    options={{ title: t('restablecer_contrasena') }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="OTP"
                     component={OTPContainer}
-                    options={{ title: t('codigo_otp') }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="RecuperarContrasena"
                     component={RecuperarContrasenaContainer}
-                    options={{ title: t('recuperar_contrasena') }}
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="inicio"
+                    name="Navbar"
                     component={HomeTabs}
                     options={{ headerShown: false }}
                 />

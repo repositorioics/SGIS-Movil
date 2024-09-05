@@ -8,16 +8,20 @@ export const estilosGlobales = () => {
     return StyleSheet.create({
         contenedor: {
             flex: 1,
-            padding: 20,
             backgroundColor: theme.colors.background,
         },
+        // colorLayer: {
+        //     backgroundColor:"#318CE7",
+        //     width:"100%",
+        //     height:"100%",
+            
+        // },
         header: {
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingHorizontal: 16,
             paddingVertical: 26,
             backgroundColor: theme.colors.textWhite,
- 
         },
         tituloHeader: {
             fontSize: 20,
@@ -28,7 +32,6 @@ export const estilosGlobales = () => {
             fontSize: 24,
             fontFamily: TIPOGRAFIAS.semiNegrita,
             color: theme.colors.text,
-            marginBottom: 10,
         },
         descripcion: {
             fontSize: 16,
@@ -116,6 +119,6 @@ export const estilosGlobales = () => {
             shadowOpacity: 0.2,
             shadowRadius: 5,
             marginBottom: 10,
-        },
+        }
     });
 };

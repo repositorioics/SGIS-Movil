@@ -20,12 +20,12 @@ export default function PantallaRecuperarContrasena({
     const [error, setError] = useState('');
 
     const validarInputs = () => {
-        if (!validarCamposVacios(email)) {
-            setError(t('llenar_todos_los_campos'));
-            return false;
-        }
         if (!validarEmail(email)) {
             setError(t('correo_invalido'));
+            return false;
+        }
+        if (!validarCamposVacios(email)) {
+            setError(t('llenar_todos_los_campos'));
             return false;
         }
         setError('');
@@ -41,21 +41,24 @@ export default function PantallaRecuperarContrasena({
     };
 
     return (
-        <View style={[estilos.contenedor, { paddingHorizontal: 20 }]}>
+        <View style={[estilos.contenedor, { paddingHorizontal: 20, display:'flex', alignItems:'center', justifyContent:'flex-start' }]}>
             <ImagenPantalla 
                 source={resetPasswordImage} 
-                style={{ width: 300, height: 300, marginBottom: 30 }}
+                style={{ width: 300, height: 300, marginBottom: 5 }}
             />
-            <Text style={estilos.descripcion}>{t('descripcion_recuperar_contrasena')}</Text>
-            <EntradaTexto
-                placeholder={t('correo_invalido')}  // Corrected the placeholder to be aligned with the context
-                value={email}
-                onChangeText={setEmail}
-                estilo={{ marginBottom: 20 }}
-            />
-            {/* {error ? <Text style={estilos.errorText}>{error}</Text> : null} */}
-            <Boton titulo={t('enviar')} onPress={onRecuperarPress} />
-            <Cargando visible={false} />
+            <View>
+                <Text style={estilos.titulo}>{t('recuperar_contrasena')}</Text>
+                <Text style={estilos.descripcion}>{t('descripcion_recuperar_contrasena')}</Text>
+                <EntradaTexto
+                    placeholder={t('correo_invalido')}
+                    secureTextEntry
+                    value={email}
+                    onChangeText={setEmail}
+                    estilo={{ marginBottom: 20 }}
+                />
+                <Boton titulo={t('enviar')} onPress={onRecuperarPress} />
+                <Cargando visible={false} />
+            </View>
         </View>
     );
 }

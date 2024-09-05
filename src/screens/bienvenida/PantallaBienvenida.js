@@ -11,14 +11,16 @@ export default function PantallaBienvenida({ navigation }) {
     const { t } = useTranslation();
 
     return (
-        <View style={estilos.contenedor}>
+        <View style={[estilos.contenedor, { paddingHorizontal: 20, display:'flex', alignItems:'center', justifyContent:'flex-start' }]}>
             <ImagenPantalla 
                 source={welcomeImage} 
-                style={{ width: 300, height: 300, marginBottom: 30 }}
+                style={{ width: 300, height: 300, marginBottom: 5 }}
             />
-            <Text style={[estilos.titulo, { marginBottom: 40 }]}>{t('bienvenido')}</Text>
+            <View>
+            <Text style={[estilos.titulo]}>{t('bienvenido')}</Text>
             <Text style={[estilos.descripcion, { marginBottom: 40 }]}>{t('optimiza_inventario')}</Text>
-            <Boton titulo={t('comenzar')} onPress={() => navigation.navigate('IniciarSesion')} />
+            <Boton titulo={t('comenzar')} onPress={() => navigation.navigate('Internacionalizacion')} />
+            </View>
         </View>
     );
 }

@@ -4,5 +4,4 @@ const cambiarIdioma = (nuevoIdioma) => {
   i18n.changeLanguage(nuevoIdioma);
 };
 
-cambiarIdioma('en');
-cambiarIdioma('es');
+export default cambiarIdioma;

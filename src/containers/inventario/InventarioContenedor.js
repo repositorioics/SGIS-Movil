@@ -9,10 +9,10 @@ export default function InventarioContenedor() {
   useEffect(() => {
     // Cargar datos de prueba o datos reales de la API
     const datosDePrueba = [
-      { id: 1, codigo: 'INS-001', nombre: 'Insumo 1', unidadMedida: 'kg', cantidadTotal: 100, categoria: 'Categoria 1' },
-      { id: 2, codigo: 'INS-002', nombre: 'Insumo 2', unidadMedida: 'lt', cantidadTotal: 50, categoria: 'Categoria 2' },
-      { id: 3, codigo: 'INS-003', nombre: 'Insumo 3', unidadMedida: 'kg', cantidadTotal: 200, categoria: 'Categoria 1' },
-      { id: 4, codigo: 'INS-004', nombre: 'Insumo 4', unidadMedida: 'm', cantidadTotal: 150, categoria: 'Categoria 3' },
+      { id: 1, codigo: 'INS-001', nombre: 'Insumo 1', unidadMedida: 'kg', cantidadTotal: 100, categoria: 'Reactivos', critico: false },
+      { id: 2, codigo: 'INS-002', nombre: 'Insumo 2', unidadMedida: 'lt', cantidadTotal: 10, categoria: 'Equipo', critico: true },
+      { id: 3, codigo: 'INS-003', nombre: 'Insumo 3', unidadMedida: 'kg', cantidadTotal: 200, categoria: 'Reactivos', critico: false },
+      { id: 4, codigo: 'INS-004', nombre: 'Insumo 4', unidadMedida: 'm', cantidadTotal: 150, categoria: 'Materiales', critico: true },
     ];
 
     setInsumos(datosDePrueba);

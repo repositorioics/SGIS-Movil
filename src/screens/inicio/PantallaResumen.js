@@ -130,23 +130,30 @@ const crearEstilos = (theme) => StyleSheet.create({
     padding: 15,
     backgroundColor: theme.colors.card,
     borderRadius: 10,
-    shadowColor: theme.colors.shadow,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
+    borderRadius: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e8ebe9',
+    // shadowColor: theme.colors.shadow,
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.2,
+    // shadowRadius: 5,
   },
   tituloSeccion: {
     fontSize: 18,
     fontWeight: 'bold',
     color: theme.colors.text,
+    marginBottom: 10,
   },
   estadoTextoAprobada: {
     color: 'green',
+    fontWeight:'bold'
   },
   estadoTextoNoAprobada: {
     color: 'red',
+    fontWeight:'bold'
   },
   estadoTextoPendiente: {
     color: 'orange',
+    fontWeight:'bold'
   },
 });

@@ -41,21 +41,24 @@ export default function PantallaOTP({
     };
 
     return (
-        <View style={[estilos.contenedor, { paddingHorizontal: 20 }]}>
+        <View style={[estilos.contenedor, { paddingHorizontal: 20, display:'flex', alignItems:'center', justifyContent:'flex-start' }]}>
             <ImagenPantalla 
                 source={otpImage} 
-                style={{ width: 300, height: 300, marginBottom: 20 }} 
+                style={{ width: 300, height: 300, marginBottom: 5 }}
             />
-            <Text style={estilos.descripcion}>{t('descripcion_otp')}</Text>
-            <EntradaTexto
-                placeholder={t('codigo_otp')}
-                value={codigoOTP}
-                onChangeText={setCodigoOTP}
-                estilo={{ marginBottom: 20 }}
-                error={error}
-            />
-            <Boton titulo={t('verificar')} onPress={onVerifyPress} />
-            <Cargando visible={false} />
+            <View>
+                <Text style={estilos.titulo}>{t('codigo_otp')}</Text>
+                <Text style={estilos.descripcion}>{t('descripcion_otp')}</Text>
+                <EntradaTexto
+                    placeholder={t('codigo_otp')}
+                    value={codigoOTP}
+                    secureTextEntry
+                    onChangeText={setCodigoOTP}
+                    estilo={{ marginBottom: 20 }}
+                />
+                <Boton titulo={t('verificar')} onPress={onVerifyPress} />
+                <Cargando visible={false} />
+            </View>
         </View>
     );
 }

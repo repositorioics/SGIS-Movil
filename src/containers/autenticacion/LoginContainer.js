@@ -32,7 +32,7 @@ export default function LoginContainer({ navigation }) {
       setNombreUsuario={setNombreUsuario}
       contrasena={contrasena}
       setContrasena={setContrasena}
-      handleLogin={() => {}}
+      handleLogin={() => navigation.navigate('Navbar')}
       cargando={cargando}
       error={error}
       navigation={navigation}

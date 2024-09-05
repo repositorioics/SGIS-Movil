@@ -2,6 +2,8 @@
     "bienvenido": "Bienvenido a ICS Inventario",
     "optimiza_inventario": "Optimiza la gestión de inventarios analizando informes detallados.",
     "comenzar": "Comenzar",
+    "seleccionar_idioma": "Selecciona un idioma",
+    "seleccionar_idioma_descripcion": "Por favor selecciona el idioma que prefieres para usar la aplicación.",
     "iniciar_sesion": "Iniciar Sesión",
     "descripcion_iniciar_sesion": "Por favor, ingrese su nombre de usuario y contraseña para acceder a su cuenta.",
     "nombre_usuario": "Nombre de Usuario",
@@ -40,6 +42,7 @@
     "requisas": "Requisas",
     "escanear": "Escanear",
     "notificaciones": "Notificaciones",
+    "inventario": "Inventario",
     "bajo_stock": "Bajo Stock",
     "proximos_a_vencer": "Próximos a Vencer",
     "ordenes_ultimos_3_meses": "Órdenes Últimos 3 Meses",
@@ -59,8 +62,9 @@
     "urgente": "Urgente",
     "ver_mas": "Ver mas",
     "resumen_inventario": "Resumen Inventario",
-    "sin_notificaciones_aun": "Sin notificaciones aún",
+    "sin_notificaciones": "Sin notificaciones aún",
     "tus_notificaciones_apareceran_aqui_una_vez_que_las_recibas": "Tus notificaciones aparecerán aquí una vez que las recibas.",
+    "sin_insumo": "Sin insumos aun",
     "nueva_orden": "Nueva Orden",
     "descripcion_nueva_orden": "Se ha recibido una nueva orden.",
     "stock_bajo": "Stock Bajo",
@@ -76,6 +80,7 @@
     "entrega_requisa": "Entrega de Requisa",
     "descripcion_entrega_requisa": "Los insumos de la requisición han sido entregados.",
     "orden_completa": "Orden Completa",
-    "descripcion_orden_completa": "Se ha completado la orden."
+    "descripcion_orden_completa": "Se ha completado la orden.",
+    "hora": "h"
 
 }

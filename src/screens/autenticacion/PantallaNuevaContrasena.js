@@ -47,28 +47,32 @@ export default function PantallaNuevaContrasena({
     };
 
     return (
-        <View style={[estilos.contenedor, { paddingHorizontal: 20 }]}>
+        <View style={[estilos.contenedor, { paddingHorizontal: 20, display:'flex', alignItems:'center', justifyContent:'flex-start' }]}>
             <ImagenPantalla 
                 source={newPasswordImage} 
-                style={{ width: 300, height: 300, marginBottom: 30 }}
+                style={{ width: 300, height: 300, marginBottom: 5 }}
             />
-            <Text style={estilos.descripcion}>{t('descripcion_restablecer_contrasena')}</Text>
-            <EntradaTexto
-                placeholder={t('nueva_contrasena')}
-                secureTextEntry
-                value={nuevaContrasena}
-                onChangeText={setNuevaContrasena}
-                estilo={{ marginBottom: 15 }}
-            />
-            <EntradaTexto
-                placeholder={t('confirmar_contrasena')}
-                secureTextEntry
-                value={confirmarContrasena}
-                onChangeText={setConfirmarContrasena}
-                estilo={{ marginBottom: 20 }}
-            />
-            <Boton titulo={t('enviar')} onPress={onResetPress} />
-            <Cargando visible={false} />
+            <View>
+                <Text style={estilos.titulo}>{t('restablecer_contrasena')}</Text>
+                <Text style={estilos.descripcion}>{t('descripcion_restablecer_contrasena')}</Text>
+                <EntradaTexto
+                    placeholder={t('nueva_contrasena')}
+                    secureTextEntry
+                    value={nuevaContrasena}
+                    onChangeText={setNuevaContrasena}
+                    estilo={{ marginBottom: 15 }}
+                />
+                <EntradaTexto
+                    placeholder={t('confirmar_contrasena')}
+                    secureTextEntry
+                    value={confirmarContrasena}
+                    onChangeText={setConfirmarContrasena}
+                    estilo={{ marginBottom: 20 }}
+                />
+                <Boton titulo={t('enviar')} onPress={onResetPress} />
+                <Cargando visible={false} />
+            </View>
+            {/* <View style={estilos.colorLayer}></View> */}
         </View>
     );
 }

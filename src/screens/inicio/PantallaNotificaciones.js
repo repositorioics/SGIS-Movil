@@ -2,20 +2,31 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { useTheme } from '@context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import ImagenPantalla from '@components/ImagenPantalla';
+import sinNotificaciones from '@assets/images/sinNotificaciones.png';
+import { FontAwesome } from '@expo/vector-icons';
+import ICONOS from '@constants/iconos';
 
 export default function PantallaNotificaciones({ notificaciones, handleNotificationClick }) {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
-  const renderNotificacion = ({ item }) => (
-    <TouchableOpacity
-      style={[styles.notificacion, { backgroundColor: theme.colors.card }]}
-      onPress={() => handleNotificationClick(item)}
-    >
-      <Text style={[styles.titulo, { color: theme.colors.text }]}>{item.titulo}</Text>
-      <Text style={[styles.descripcion, { color: theme.colors.textGray }]}>{item.descripcion}</Text>
-    </TouchableOpacity>
-  );
+  const renderNotificacion = ({ item }) => {
+    const configuracion = ICONOS[item.tipo] || {};
+    return (
+      <TouchableOpacity
+        style={[styles.notificacion, { backgroundColor: theme.colors.card }]}
+        onPress={() => handleNotificationClick(item)}
+      >
+        <FontAwesome name={configuracion.icono} size={24} color={configuracion.color} style={styles.icono} />
+        <View style={styles.contenido}>
+          <Text style={[styles.titulo, { color: theme.colors.text }]}>{item.titulo}</Text>
+          <Text style={[styles.descripcion, { color: theme.colors.textGray }]}>{item.descripcion}</Text>
+        </View>
+        <Text style={[styles.horaMinutos, { color: theme.colors.textGray }]}>{item.horaMinutos} {t('hora')}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   const renderFecha = ({ item }) => (
     <View style={styles.seccionFecha}>
@@ -43,8 +54,10 @@ export default function PantallaNotificaciones({ notificaciones, handleNotificat
         ListEmptyComponent={() => (
           <View style={styles.emptyStateContainer}>
             <Text style={[styles.emptyStateText, { color: theme.colors.textGray }]}>{t('sin_notificaciones')}</Text>
+            <ImagenPantalla source={sinNotificaciones} style={{ width: 300, height: 300, marginBottom: 5 }}/>
           </View>
         )}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -60,14 +73,18 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   notificacion: {
-    padding: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
     borderRadius: 10,
-    marginBottom: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2, // Para sombras en Android
+    borderBottomWidth: 1,
+    borderBottomColor: '#e8ebe9',
+  },
+  icono: {
+    marginRight: 15,
+  },
+  contenido: {
+    flex: 1,
   },
   titulo: {
     fontSize: 16,
@@ -76,6 +93,10 @@ const styles = StyleSheet.create({
   descripcion: {
     fontSize: 14,
     marginTop: 5,
+  },
+  horaMinutos: {
+    fontSize: 12,
+    marginLeft: 10,
   },
   emptyStateContainer: {
     flex: 1,

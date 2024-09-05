@@ -15,10 +15,10 @@ export default function EntradaTexto({
     return (
         <View>
             <TextInput
-                style={[styles.entrada, { borderColor: theme.colors.border, color: theme.colors.text }, estilo]}
+                style={[styles.entrada, { borderColor: theme.colors.textGray, color: theme.colors.text }, estilo]}
                 placeholder={placeholder}
                 secureTextEntry={secureTextEntry}
-                placeholderTextColor={theme.colors.text || 'rgba(0, 0, 0, 0.5)'}
+                placeholderTextColor={theme.colors.textGray || 'rgba(0, 0, 0, 0.5)'}
                 {...props}
             />
             {error ? <Text style={styles.errorText}>{error}</Text> : null}
@@ -29,7 +29,8 @@ export default function EntradaTexto({
 const styles = StyleSheet.create({
     entrada: {
         height: 50,
-        borderWidth: 1,
+        borderWidth: 0.7,
+        borderColor:'#e8ebe9',
         borderRadius: 8,
         paddingHorizontal: 15,
         fontFamily: TIPOGRAFIAS.regular,
