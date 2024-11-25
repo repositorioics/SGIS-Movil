@@ -52,7 +52,11 @@ export default function ResumenContainer({ navigation }) {
   }, []);
 
   const handleNotificationClick = () => {
-    navigation.navigate('notificaciones');
+    navigation.navigate('Notificaciones');
+  };
+
+  const handleSettingsClick = () => {
+    navigation.navigate('Configuracion');
   };
 
   return (
@@ -65,6 +69,7 @@ export default function ResumenContainer({ navigation }) {
       onOrderClick={(order) => console.log('Ver detalle de la orden:', order)}
       onRequisitionClick={(req) => console.log('Ver detalle de la requisa:', req)}
       onNotificationClick ={handleNotificationClick}
+      onSettingsClick={handleSettingsClick}
     />
   );
 }

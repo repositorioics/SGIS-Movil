@@ -33,7 +33,7 @@ const ICONOS = {
       color: '#28A745',
     },
     reactivos: {
-      icono: 'flask',  // Cambié 'nombre' por 'icono' para mantener consistencia
+      icono: 'flask', 
       color: '#808080',
     },
     equipo: {

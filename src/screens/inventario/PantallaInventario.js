@@ -18,7 +18,7 @@ export default function PantallaInventario({ insumos, onSearch, onFilter }) {
   );
 
   return (
-    <View style={estilos.container}>
+    <View style={[estilos.contenedor, { backgroundColor: theme.colors.background }]}>
       <BarraBusqueda onSearch={onSearch} />
       <FiltroCategoria onFilter={onFilter} />
       <FlatList
@@ -41,7 +41,7 @@ export default function PantallaInventario({ insumos, onSearch, onFilter }) {
 }
 
 const crearEstilos = (theme) => StyleSheet.create({
-  container: {
+  contenedor: {
     flex: 1,
     padding: 20,
     backgroundColor: theme.colors.background50,

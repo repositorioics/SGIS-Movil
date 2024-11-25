@@ -57,7 +57,6 @@ export default function PantallaLogin({
                 <Text style={estilos.descripcion}>{t('descripcion_iniciar_sesion')}</Text>
                 <EntradaTexto
                     placeholder={t('nombre_usuario')}
-                    secureTextEntry
                     value={nombreUsuario}
                     onChangeText={setNombreUsuario}
                     estilo={{ marginBottom: 15 }}
